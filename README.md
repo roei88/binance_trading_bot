@@ -1,1 +1,152 @@
-<pre> ¿¿¿markdown # 💹 Binance Trading Bot ## 📖 Table of Contents - [✨ Overview](#-overview) - [📂 Directory Structure](#-directory-structure) - [🌟 Features](#-features) - [🔧 Setup](#-setup) - [📋 Prerequisites](#-prerequisites) - [📥 Installation](#-installation) - [🚀 Running the Bot](#-running-the-bot) - [🐳 Using Docker](#-using-docker) - [⚙️ Configuration](#️-configuration) - [📊 Technical Indicators](#-technical-indicators) - [🧪 Testing](#-testing) - [📝 Logging](#-logging) - [⚠️ Disclaimer](#️-disclaimer) - [📜 License](#-license) - [🤝 Contributions](#-contributions) --- ## ✨ Overview The **Binance Trading Bot** is an automated Python-based bot that interacts with the Binance API to execute trades on the **XRP/USDT** pair. It leverages **technical analysis** and **market indicators** to identify optimal trading opportunities and manage trades automatically. --- ## 📂 Directory Structure ```plaintext binance_trading_bot/ ├── trading_bot.py # Main bot logic ├── settings.json # JSON settings file for bot configuration ├── Dockerfile # Docker configuration ├── e2e_test.py # End-to-end testing with mock data ├── utils.py # Utility functions ├── data/ │ └── XRP_11_24_data.csv # Historical XRP/USDT data ├── indicators.json # Technical indicators configuration └── README.md # Project documentation ``` --- ## 🌟 Features - 🚀 **Automated Trading**: Executes buy and sell orders using Binance API. - 📈 **Technical Analysis**: Integrates trend analysis techniques like Moving Average Crossover. - ⚙️ **Configurable**: Easily adjustable via `settings.json`. - 🔍 **Indicator Analysis**: Utilizes various indicators for data-driven trading decisions. - 🗂️ **Logging**: Tracks all trading activities for transparency and debugging. --- ## 🔧 Setup ### 📋 Prerequisites - Python 3.9 or above - Binance API Key and Secret - Docker (optional, for containerization) ### 📥 Installation 1. **Clone the Repository**: ```sh git clone https://github.com/yourusername/binance_trading_bot.git cd binance_trading_bot ``` 2. **Install Dependencies**: ```sh pip install -r requirements.txt ``` 3. **Set Up `settings.json`**: Configure the `settings.json` file with your Binance API credentials and trading parameters: ```json { "BINANCE_API_KEY": "YOUR_BINANCE_API_KEY", "BINANCE_API_SECRET": "YOUR_BINANCE_API_SECRET", "DATA_PATH": "data/XRP_11_24_data.csv", "BASE_CURRENCY": "XRP", "TARGET_CURRENCY": "USDT", "TRADE_LIMIT": { "total": 10, "daily": 10 }, "TRADE_VALUE_CURRENCY": "USD", "TRADING_CYCLE_LIMIT": true, "TRADING_CYCLE_AMOUNT": 500, "LOG_PATH": "logs/trading_bot.log" } ``` --- ### 🚀 Running the Bot 1. **Run End-to-End Tests** *(optional but recommended)*: ```sh python -m unittest e2e_test.py ``` 2. **Start the Trading Bot**: ```sh python trading_bot.py ``` --- ### 🐳 Using Docker 1. **Build the Docker Image**: ```sh docker build -t binance_trading_bot . ``` 2. **Run the Docker Container**: ```sh docker run -d binance_trading_bot ``` --- ## ⚙️ Configuration - **`settings.json`**: Stores API keys, trade limits, logging paths, and other configurations. - **`indicators.json`**: Defines technical indicators and parameters for analysis. --- ## 📊 Technical Indicators - **Moving Average Crossover**: Tracks trends using short-term and long-term averages. - **Relative Strength Index (RSI)**: Identifies overbought/oversold conditions. - **Bollinger Bands**: Measures market volatility. - **MACD**: Highlights momentum and crossover signals. --- ## 🧪 Testing Run the `e2e_test.py` script to validate the trading bot's functionality using mock data. This ensures safe testing without risking actual trades. ```sh python -m unittest e2e_test.py ``` --- ## 📝 Logging All trading activities, including errors, are logged in the file specified in `settings.json`. Logs enable post-trade analysis and troubleshooting. --- ## ⚠️ Disclaimer This trading bot is for **educational purposes only**. Use it at your own risk. Cryptocurrency trading involves significant risk; trade only with funds you can afford to lose. --- ## 📜 License This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details. --- ## 🤝 Contributions Contributions are welcome! Submit a pull request or open an issue to propose improvements. Let's collaborate to make this project better. 🎉 ¿¿¿ </pre>
+# 💻 Binance Trading Bot Project
+
+## 📖 Table of Contents
+- [✨ Overview](#-overview)
+- [📂 Directory Structure](#-directory-structure)
+- [📥 Installation](#-installation)
+- [⚙️ Configuration Files](#️-configuration-files)
+  - [🛠️ settings.json](#️-settingsjson)
+  - [📊 indicators.json](#-indicatorsjson)
+  - [📜 trading_plan.json](#-trading_planjson)
+- [📈 Technical Indicators](#-technical-indicators)
+- [🚀 Running the Bot](#-running-the-bot)
+- [🐳 Docker Support](#-docker-support)
+- [🔄 Pre-Trade and Post-Trade Actions](#-pre-trade-and-post-trade-actions)
+- [🧪 Testing](#-testing)
+- [📝 Logging](#-logging)
+- [⚠️ Disclaimer](#️-disclaimer)
+- [📜 License](#-license)
+
+---
+
+## ✨ Overview
+The **Binance Trading Bot** is designed to interact with Binance's API to conduct **automated trading** of cryptocurrency pairs. Equipped with **technical indicators**, the bot makes informed decisions about buying and selling, aiming to maximize profits while managing risk effectively.
+
+---
+
+## 📂 Directory Structure
+```plaintext
+binance_trading_bot/
+├── trading_bot.py        # Main bot logic
+├── settings.json         # JSON settings file for bot configuration
+├── Dockerfile            # Docker configuration
+├── e2e_test.py           # End-to-end testing with mock data
+├── utils.py              # Utility functions
+├── data/
+│   └── XRP_11_24_data.csv  # Historical XRP/USDT data
+├── indicators.json       # Technical indicators configuration
+├── trading_plan.json     # User-defined trading plans for execution
+├── README.md             # Comprehensive project documentation
+├── pre_trade.py          # Pre-trade actions including setup and analysis
+├── post_trade.py         # Post-trade actions including updating indicators and logging
+```
+
+---
+
+## 📥 Installation
+1. **Clone this repository**:
+   ```bash
+   git clone https://github.com/yourusername/binance_trading_bot.git
+   cd binance_trading_bot
+   ```
+
+2. **Install required Python packages**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Set up configuration files**:
+   - Edit `settings.json`, `indicators.json`, and `trading_plan.json` as needed.
+
+4. **Start the bot**:
+   ```bash
+   python trading_bot.py
+   ```
+
+---
+
+## ⚙️ Configuration Files
+
+### 🛠️ settings.json
+Stores configuration settings for the bot, including:
+- Binance API Key and Secret
+- Data paths
+- Currency pairs
+- Trade limits
+- Log paths
+
+### 📊 indicators.json
+Defines the technical indicators and their parameters. This file helps the bot make informed buy/sell decisions.
+
+### 📜 trading_plan.json
+Contains user-defined trading plans, including session start and end times.
+
+---
+
+## 📈 Technical Indicators
+The bot uses the following technical indicators to determine optimal trading points:
+
+1. **📉 Moving Average Crossover**: Identifies trends by comparing short-term and long-term moving averages. Effective in trending markets.
+2. **📊 Relative Strength Index (RSI)**: Highlights overbought/oversold conditions for market entry/exit points.
+3. **📈 Bollinger Bands**: Tracks market volatility and identifies reversal opportunities in volatile markets.
+4. **📊 MACD**: Highlights momentum and crossover signals for trend identification.
+5. **📏 Support/Resistance Levels**: Identifies critical price levels where reversals or breakouts are likely.
+
+---
+
+## 🚀 Running the Bot
+1. **Ensure configuration files are properly set up**.
+2. **Run the bot**:
+   ```bash
+   python trading_bot.py
+   ```
+
+3. **Automated tests** (`e2e_test.py`) will validate configurations before trading begins.
+
+---
+
+## 🐳 Docker Support
+Run the bot in an isolated Docker container for easy deployment:
+1. **Build the Docker image**:
+   ```bash
+   docker build -t binance_trading_bot .
+   ```
+
+2. **Run the container**:
+   ```bash
+   docker run -d binance_trading_bot
+   ```
+
+---
+
+## 🔄 Pre-Trade and Post-Trade Actions
+- **Pre-Trade Actions (pre_trade.py)**:
+  - Sets up necessary analyses before trading, such as selecting the best indicator.
+- **Post-Trade Actions (post_trade.py)**:
+  - Updates indicator usage and logs important information after each trade.
+
+---
+
+## 🧪 Testing
+Run end-to-end tests with mock data to ensure everything is functioning correctly:
+```bash
+python -m unittest e2e_test.py
+```
+
+---
+
+## 📝 Logging
+Logs are saved in the path specified in `settings.json`. They include:
+- Detailed trade records
+- Selected indicators
+- Any errors encountered during execution
+
+---
+
+## ⚠️ Disclaimer
+This bot is for **educational purposes only**. Use it at your own risk. Cryptocurrency trading involves significant risk, and losses can occur.
+
+---
+
+## 📜 License
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for more details.
