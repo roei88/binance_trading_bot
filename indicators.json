@@ -1,0 +1,77 @@
+{
+    "Moving_Average_Crossover": {
+        "complementary": "Relative_Strength_Index",
+        "details": {
+            "indicator_description": "Identifies trends and trend reversals by comparing short and long-term averages.",
+            "complementary_description": "Provides momentum context for trend signals",
+            "use_case": "Effective in trending markets, especially during bear markets."
+        },
+        "usage_data": [
+            {
+                "date": "",
+                "volume": 0,
+                "profit": 0
+            }
+        ]
+    },
+    "Relative_Strength_Index": {
+        "complementary": "Bollinger_Bands",
+        "details": {
+            "indicator_description": "Signals overbought or oversold conditions, aiding in market entry/exit decisions.",
+            "complementary_description": "Confirms reversal points with volatility",
+            "use_case": "Best when combined with trend-following indicators like MACD."
+        },
+        "usage_data": [
+            {
+                "date": "",
+                "volume": 0,
+                "profit": 0
+            }
+        ]
+    },
+    "Bollinger_Bands": {
+        "complementary": "Relative_Strength_Index",
+        "details": {
+            "indicator_description": "Captures market volatility and identifies potential reversal points near bands.",
+            "complementary_description": "Combines volatility and momentum insights for entry/exit signals",
+            "use_case": "Useful for tactical trades and in volatile markets."
+        },
+        "usage_data": [
+            {
+                "date": "",
+                "volume": 0,
+                "profit": 0
+            }
+        ]
+    },
+    "Support_Resistance_Levels": {
+        "complementary": "Bollinger_Bands",
+        "details": {
+            "indicator_description": "Highlights price levels where reversals or breakouts are likely to occur.",
+            "complementary_description": "Validates breakout and reversal strength",
+            "use_case": "Best used with Bollinger_Bands and Moving_Average_Crossover for validation."
+        },
+        "usage_data": [
+            {
+                "date": "",
+                "volume": 0,
+                "profit": 0
+            }
+        ]
+    },
+    "MACD": {
+        "complementary": "Moving_Average_Crossover",
+        "details": {
+            "indicator_description": "A trend-following indicator that highlights momentum and crossover signals.",
+            "complementary_description": "Enhances trend identification accuracy",
+            "use_case": "Best during market trends and when optimized for specific markets."
+        },
+        "usage_data": [
+            {
+                "date": "",
+                "volume": 0,
+                "profit": 0
+            }
+        ]
+    }
+}
