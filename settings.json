@@ -1,0 +1,12 @@
+{
+    "BINANCE_API_KEY": "YOUR_BINANCE_API_KEY",
+    "BINANCE_API_SECRET": "YOUR_BINANCE_API_SECRET",
+    "DATA_PATH": "data/XRP_11_24_data.csv",
+    "BASE_CURRENCY": "XRP",
+    "TARGET_CURRENCY": "USDT",
+    "TRADE_LIMIT": { "total": 10, "daily": 10 },
+    "TRADE_VALUE_CURRENCY": "USD",
+    "TRADING_CYCLE_LIMIT": true,
+    "TRADING_CYCLE_AMOUNT": 500,
+    "LOG_PATH": "logs/trading_bot.log"
+}
