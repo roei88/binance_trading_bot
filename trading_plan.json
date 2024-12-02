@@ -1,0 +1,22 @@
+{
+    "sessions": [
+        {
+            "session_name": "Morning Trading Session",
+            "start_time": "2024-12-02T09:00",
+            "end_time": "2024-12-02T11:00",
+            "active": true
+        },
+        {
+            "session_name": "Afternoon Trading Session",
+            "start_time": "2024-12-02T14:00",
+            "end_time": "2024-12-02T16:00",
+            "active": true
+        },
+        {
+            "session_name": "Evening Trading Session",
+            "start_time": "2024-12-02T18:00",
+            "end_time": "2024-12-02T20:00",
+            "active": true
+        }
+    ]
+}

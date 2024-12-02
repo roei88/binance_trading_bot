@@ -1,17 +1,13 @@
 import unittest
 from unittest.mock import Mock
-from trading_bot import TradingBot
 import pandas as pd
+from trading_bot import TradingBot
 
 class TestTradingBot(unittest.TestCase):
     def setUp(self):
         self.mock_client = Mock()
-        self.historical_data = pd.DataFrame({
-            'timeOpen': ['2024-11-30T00:00:00.000Z'],
-            'timeClose': ['2024-11-30T23:59:59.999Z'],
-            'open': [1.7967153281],
-            'close': [1.9441209163]
-        })
+        # Load historical data from the CSV file
+        self.historical_data = pd.read_csv('data/XRP_11_24_data.csv', sep=';')
         self.indicators = {
             "Moving_Average_Crossover": {
                 "usage_data": [{"date": "", "volume": 10, "profit": 100}]

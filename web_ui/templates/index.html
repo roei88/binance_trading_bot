@@ -1,0 +1,50 @@
+<!-- HTML Template (index.html) -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Trading Bot Dashboard</title>
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Trading Bot Dashboard</h1>
+    <hr>
+    <h2>Settings</h2>
+    <form action="/update_settings" method="post">
+        {% for key, value in settings.items() %}
+            <div class="form-group">
+                <label for="{{ key }}">{{ key }}</label>
+                <input type="text" class="form-control" id="{{ key }}" name="{{ key }}" value="{{ value }}">
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Update Settings</button>
+    </form>
+    <hr>
+    <h2>Trading Plan</h2>
+    <form action="/update_trading_plan" method="post">
+        {% for key, value in trading_plan.items() %}
+            <div class="form-group">
+                <label for="{{ key }}">{{ key }}</label>
+                <input type="text" class="form-control" id="{{ key }}" name="{{ key }}" value="{{ value }}">
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Update Trading Plan</button>
+    </form>
+    <hr>
+    <h2>Manage Trading</h2>
+    <form action="/manage_trading" method="post">
+        <button type="submit" name="action" value="start" class="btn btn-success">Start Trading</button>
+        <button type="submit" name="action" value="stop" class="btn btn-danger">Stop Trading</button>
+    </form>
+    <hr>
+    <h2>Logs</h2>
+    <pre style="background-color: #f8f9fa; padding: 15px;">{% for log in logs %}{{ log }}{% endfor %}</pre>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
